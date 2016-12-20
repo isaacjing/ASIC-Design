@@ -1,0 +1,80 @@
+Reg Distribution Table
+Reg[0]: Output; 
+Reg[1]: Data4; //Oldest Data
+Reg[2]: Data3; 
+Reg[3]: Data2; 
+Reg[4]: Data1; //Newest Data
+Reg[5]: Temporary location to store Data1
+Reg[6]: F3
+Reg[7]: F2
+Reg[8]: F1
+Reg[9]: F0
+
+
+idle:			modwait = 0;
+				if (data_ready == 0) stay in idle
+				if (data_ready == 1) goto StoreData
+				if (load_coeff == 1) goto StoreF0
+
+StoreData:		reg[5] = data; err = 0; modwait = 1
+				if (data_ready == 0) goto eidle
+				else goto zero
+StoreF0:		clear = 1; reg[9] = F0; modwait = 1
+				goto StoreF0Next
+StoreF0Next: 	modwait = 0; clear = 0
+				if (load_coeff == 1)goto StoreF1; else stay
+StoreF1:		reg[8] = F1; modwait = 1
+				goto StoreF1Next
+StoreF1Next:	modwait = 0
+				if (load_coeff == 1) goto StoreF2; else stay
+StoreF2:		reg[7] = F2; modwait = 1
+				goto StoreF2Next
+StoreF2Next:	modwait = 0
+				goto StoreF3
+StoreF3:		reg[6] = F3; modwait = 1
+				goto to idle
+
+zero:			reg[0] = 0; cnt_up = 1
+				goto sort1
+
+sort1:			reg[1] = reg[2]
+				goto sort2
+
+sort2:			reg[2] = reg[3]
+				goto sort3
+
+sort3:			reg[3] = reg[4]
+				goto sort4
+
+sort4:			reg[4] = reg[5]
+				goto mul1
+
+mul1:			reg[10] = reg[1] * reg[6]	//sample4 * F3
+				if (overflow == 1) goto edile; else goto muladd1
+
+muladd1:		reg[0] = reg[0] + reg[10]
+				if (overflow == 1) goto edile; else goto mul2
+
+mul2:			reg[10] = reg[2] * reg[7]	//sample3 * F2
+				if (overflow == 1) goto edile; else goto mulsub1
+
+mulsub1:		reg[0] = reg[0] - reg[10]
+				if (overflow == 1) goto edile; else goto mul3
+
+mul3:			reg[10] = reg[3] * reg[8]	//sample2 * F1
+				if (overflow == 1) goto edile; else goto muladd2
+
+muladd2:		reg[0] = reg[0] + reg[10]
+				if (overflow == 1) goto edile; else goto mul4
+
+mul4:			reg[10] = reg[4] * reg[9]	//sample1 * F0
+				if (overflow == 1) goto edile; else goto mulsub2
+
+mulsub2:		reg[0] = reg[0] - reg[10]
+				if (overflow == 1) goto edile; else goto idle
+				
+eidle:			err = 1
+				if (data_ready == 1) goto StoreData
+				if (data_ready == 0) stay
+
+

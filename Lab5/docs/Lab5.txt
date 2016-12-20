@@ -1,0 +1,17 @@
+10.1
+To ensure correct operation, data_ready must remain asserted for 3 clock cycles. With synchronizer, it will be gauranteed that the dr signal is asserted 2 cycles.
+Data must remain valid after data_ready is asserted for 2 clock cycle.
+
+10.2
+
+How are the image files different?
+It looks like to me that if I add the three filtered photos together, I'll get the original photo. Some color (especially bright colors) are missing on the filtered photos.
+
+What is the general syntax for file IO operation:
+$fopen(INPUT_FILENAME, "rb") for opening the file
+$fscanf(in_file,"%c" , dib_header[0]) for reading the file
+fclose(in_file) for closing the file
+
+What are the different format specifies available for use in the fscanf?
+%c for capture pixel, a byte, and DIB header information
+The general format is: $fscanf(source,"specifies" , destination)

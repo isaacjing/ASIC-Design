@@ -1,0 +1,25 @@
+Teamwork.txt
+
+1. Rating
+Myself:
+a. The team member made a sincere effort to figure out the design and testing so as to be able to contribute to the team effort: 4
+b. This team member was respectful and considerate of other team members: 4
+c. This team member fulfilled all promised or commitments to team members including those listed in ground rules 1-5: 4
+d. You were able to achieve or learn more with this partner than you would have without: 4
+
+Teammate:
+a. The team member made a sincere effort to figure out the design and testing so as to be able to contribute to the team effort: 5
+b. This team member was respectful and considerate of other team members: 5
+c. This team member fulfilled all promised or commitments to team members including those listed in ground rules 1-5: 5
+d. You were able to achieve or learn more with this partner than you would have without: 5
+
+2. Describe briefly the contribution of each team member:
+Jinsheng Zhu and I took a look at initial design together. We helped each other with state diagrams. Then, each of us implemented the design individually. Later on, we went to office hours together, and helped each other debugging the design.
+
+3. We have met about 10 hours totally. We met three times for this lab.
+
+4. Jingsheng and I did design and debug together.
+
+5. I had the feeling that he is a really hardworking person. This did not show up on our previous collaberation.
+
+6. Be honest, I used my own TB for most of the debugging.
