@@ -1,0 +1,32 @@
+Teamwork Report
+ECE 337 Lab4
+Jiangshan Jing
+Teammate: Jinsheng Zhu
+
+1. Rate
+
+a. This team member made a sincere effort (to the best that you can tell) to figure out the design and testing so as to be able to contribute to the team effort
+Score: 3
+
+b. This team member was respectful and considerate of other team members.
+Score: 5
+
+c. This team member fulfilled all promised or commitments to team members including those listed in ground rules 1-5.
+Score: 5
+
+d. You were able to achieve or learn more with this partner than you would have without.
+Score: 3
+
+2. Describe contribution
+
+Jinsheng and I discussed the design's highlevel architecture (Such as which file will provide which functions) at first. Then, I designed the state diagrams and block diagrams for the design, while he was still trying to finish Lab 3. After that, I finished implementing the design, and give him more details regarding on block diagram.
+
+3. We meet three times as total. He and I has about 20 text messages exchanges.
+
+4. I helped Jinsheng on his block diagram, since I'm ahead of him by a lot. I also helped debugging his codes.
+
+5. I learned that Jinsheng is a nice person to work with. His temper made him a perfect teammate. His attitude was also fastidious. Even though he did not get the opportunity to contribute a lot in this lab assignment, he definitely wanted to contribute more. However, since I'm ahead of him, and he did not finish lab 3 until Monday, thus, he did not get the opportunity to contribute...
+
+6. Paul Krogmeier's TB helps because it was posted very early. Later on, I created my own.
+
+

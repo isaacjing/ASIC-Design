@@ -1,0 +1,18 @@
+//Timing Control Pseudo-code
+//2 counters
+//First counter: controls inserting strope every 10 cycles
+//Second counter: controls reading 9 bits
+
+if(enable_timer){
+	@ negedge clk{
+		counter 1 enable = 1
+		if (Counter 1 roll over == 1)
+			counter 2 enable = 1
+		if (Counter 2 roll over == 1){
+			counter 1 clear = 1
+			packet_done = 1
+		}
+	if(!n_rst){
+		reset both timers
+	}
+}
