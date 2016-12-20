@@ -1,0 +1,9 @@
+{signal: [
+  {name: 'clk', wave: 'p................|...|..|.....|..'},
+  {name: 'n_rst', wave: '1................|...|..|.....|lh',},
+  {name: 'd_edge', wave: '0................|...|hl|.....|..'},
+  {name: 'rcving', wave:'0h...............|...|..|lh...|..'},
+  {name: 'shift_enable', wave:'0...hl......hl...|.hl|hl|...hl|hl'},
+  {name: 'byte_received', wave: '0................|.hl|..|.....|..'}
+]}
+
